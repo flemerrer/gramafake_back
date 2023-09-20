@@ -9,10 +9,10 @@ import lombok.NonNull;
 @Accessors(fluent = true) @Getter
 public class NewUser {
 
-    private final @NonNull String username;
+    private final String username;
 
-    private final @NonNull String password;
+    private final String password;
 
-    private final @NonNull String profilepic;
+    private final String profilepic;
 
 }
