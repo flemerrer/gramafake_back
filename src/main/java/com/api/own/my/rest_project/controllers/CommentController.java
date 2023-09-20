@@ -1,6 +1,7 @@
 package com.api.own.my.rest_project.controllers;
 
 import com.api.own.my.rest_project.entities.Comment;
+import com.api.own.my.rest_project.entities.dto.CommentSend;
 import com.api.own.my.rest_project.services.CommentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -17,7 +18,7 @@ public class CommentController {
     CommentService commentService;
 
     @GetMapping("/all")
-    public List<Comment> fetchAll(){
+    public List<CommentSend> fetchAll(){
         return commentService.getAll();
     }
 

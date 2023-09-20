@@ -13,6 +13,6 @@ public class NewUser {
 
     private final @NonNull String password;
 
-    private final @NonNull String profilepic;
+    private final @NonNull String profilePic;
 
 }

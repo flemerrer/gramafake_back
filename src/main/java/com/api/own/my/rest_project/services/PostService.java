@@ -1,6 +1,8 @@
 package com.api.own.my.rest_project.services;
 
+import com.api.own.my.rest_project.entities.Comment;
 import com.api.own.my.rest_project.entities.Post;
+import com.api.own.my.rest_project.entities.dto.CommentSend;
 import com.api.own.my.rest_project.entities.dto.NewPost;
 import com.api.own.my.rest_project.entities.dto.PostSend;
 import com.api.own.my.rest_project.repositories.PostRepo;
@@ -44,4 +46,7 @@ public class PostService {
         postRepo.deleteById(id);
     }
 
+    public List<CommentSend> getPostComments(Long id) {
+        return postRepo.findById(id).get().getCommentList().stream().map(comment -> comment.toDto()).toList();
+    }
 }

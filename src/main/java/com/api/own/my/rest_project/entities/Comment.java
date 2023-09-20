@@ -1,5 +1,7 @@
 package com.api.own.my.rest_project.entities;
 
+import com.api.own.my.rest_project.entities.dto.CommentSend;
+import com.api.own.my.rest_project.entities.dto.PostSend;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -30,5 +32,10 @@ public class Comment {
         this.post = post;
         this.user = user;
         this.date = LocalDate.now();
+    }
+
+    public CommentSend toDto() {
+        CommentSend commentDTO = new CommentSend(this.user.getUsername(), this.user.getProfilePic(), this.getDescription(), this.getDate());
+        return commentDTO;
     }
 }

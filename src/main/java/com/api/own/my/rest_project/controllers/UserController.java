@@ -59,7 +59,7 @@ public class UserController {
         if (updateUser != null){
             updateUser.setUsername(newUser.username());
             updateUser.setPassword(newUser.password());
-            updateUser.setProfilepic(newUser.profilepic());
+            updateUser.setProfilePic(newUser.profilePic());
             userService.update(updateUser);
             return ResponseEntity.ok().build();
         } else {

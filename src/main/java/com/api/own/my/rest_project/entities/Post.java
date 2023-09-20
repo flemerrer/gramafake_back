@@ -36,7 +36,7 @@ public class Post {
     }
 
     public PostSend toDto() {
-        PostSend postDTO = new PostSend(this.user.getUsername(), this.getPicture(), this.getDescription(), this.getDate());
+        PostSend postDTO = new PostSend(this.id, this.user.getUsername(), this.user.getProfilePic(), this.getPicture(), this.getDescription(), this.getDate());
         return postDTO;
     }
 }

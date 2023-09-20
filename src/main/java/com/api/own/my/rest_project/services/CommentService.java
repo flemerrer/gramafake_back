@@ -1,6 +1,7 @@
 package com.api.own.my.rest_project.services;
 
 import com.api.own.my.rest_project.entities.Comment;
+import com.api.own.my.rest_project.entities.dto.CommentSend;
 import com.api.own.my.rest_project.repositories.CommentRepo;
 import com.api.own.my.rest_project.repositories.PostRepo;
 import com.api.own.my.rest_project.repositories.UserRepo;
@@ -35,8 +36,8 @@ public class CommentService {
         return commentRepo.findById(id).get();
     }
 
-    public List<Comment> getAll() {
-        return commentRepo.findAll();
+    public List<CommentSend> getAll() {
+        return commentRepo.findAll().stream().map(comment -> comment.toDto()).toList();
     }
 
     public void update(Comment comment) {

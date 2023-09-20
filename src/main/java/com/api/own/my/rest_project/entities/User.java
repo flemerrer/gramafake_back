@@ -15,11 +15,12 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(unique=true)
     private String username;
 
     private String password;
 
-    private String profilepic;
+    private String profilePic;
 
     @OneToMany
     List<Post> postList;
@@ -27,10 +28,10 @@ public class User {
     @OneToMany
     List<Comment> commentList;
 
-    public User(String username, String password, String profilepic) {
+    public User(String username, String password, String profilePic) {
         this.username = username;
         this.password = password;
-        this.profilepic = profilepic;
+        this.profilePic = profilePic;
     }
 
 }

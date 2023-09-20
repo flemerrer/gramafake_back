@@ -1,6 +1,8 @@
 package com.api.own.my.rest_project.controllers;
 
+import com.api.own.my.rest_project.entities.Comment;
 import com.api.own.my.rest_project.entities.Post;
+import com.api.own.my.rest_project.entities.dto.CommentSend;
 import com.api.own.my.rest_project.entities.dto.NewPost;
 import com.api.own.my.rest_project.entities.dto.PostSend;
 import com.api.own.my.rest_project.services.PostService;
@@ -27,6 +29,11 @@ public class PostController {
     @GetMapping("/{id}")
     public Post fetchOne(@PathVariable Long id){
         return postService.getOne(id);
+    }
+
+    @GetMapping("/{id}/comments")
+    public List<CommentSend> fetchComments(@PathVariable Long id){
+        return postService.getPostComments(id);
     }
 
     @PostMapping("/create")

@@ -16,7 +16,7 @@ public class UserService {
     UserRepo userRepo;
 
     public void create(NewUser newUser) {
-        User createUser = new User(newUser.username(), newUser.password(), newUser.profilepic());
+        User createUser = new User(newUser.username(), newUser.password(), newUser.profilePic());
         userRepo.save(createUser);
     }
 
