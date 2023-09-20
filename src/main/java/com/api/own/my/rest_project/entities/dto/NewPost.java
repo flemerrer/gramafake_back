@@ -11,8 +11,8 @@ import java.time.LocalDate;
 @Accessors(fluent = true) @Getter
 public class NewPost {
 
-    private final String picture;
+    private final @NonNull String picture;
 
-    private final String description;
+    private final @NonNull String description;
 
 }

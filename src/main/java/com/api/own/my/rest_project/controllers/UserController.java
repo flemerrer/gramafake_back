@@ -28,7 +28,7 @@ public class UserController {
     }
 
     @PostMapping("/create")
-    public ResponseEntity createUser(NewUser newUser){
+    public ResponseEntity createUser(@RequestBody NewUser newUser){
 
         if (userService.getUserByName(newUser.username()).isEmpty()){
             User createUser = new User(newUser.username(), newUser.password(), newUser.profilepic());
@@ -40,7 +40,7 @@ public class UserController {
     }
 
     @PostMapping("/login")
-    public ResponseEntity login(UserLogin userLogin){
+    public ResponseEntity login(@RequestBody UserLogin userLogin){
 
         User checkUser= userService.getUserByName(userLogin.username()).get();
 

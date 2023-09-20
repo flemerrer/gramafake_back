@@ -26,7 +26,7 @@ public class CommentController {
     }
 
     @PostMapping("/create")
-    public ResponseEntity createComment(@RequestParam Long postId, @RequestParam String username, Comment newComment){
+    public ResponseEntity createComment(@RequestParam Long postId, @RequestParam String username, @RequestBody Comment newComment){
 
         commentService.create(postId, username, newComment);
         return ResponseEntity.ok().build();

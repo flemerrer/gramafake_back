@@ -9,6 +9,6 @@ import lombok.experimental.Accessors;
 @Accessors(fluent = true) @Getter
 public class NewComment {
 
-    private final String description;
+    private final @NonNull String description;
 
 }

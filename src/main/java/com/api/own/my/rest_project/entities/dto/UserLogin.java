@@ -9,8 +9,8 @@ import lombok.NonNull;
 @Accessors(fluent = true) @Getter
 public class UserLogin {
 
-    private final String username;
+    private final @NonNull String username;
 
-    private final String password;
+    private final @NonNull String password;
 
 }

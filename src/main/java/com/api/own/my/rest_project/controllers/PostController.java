@@ -26,7 +26,7 @@ public class PostController {
     }
 
     @PostMapping("/create")
-    public ResponseEntity createPost(@RequestParam String username, Post newPost){
+    public ResponseEntity createPost(@RequestParam String username, @RequestBody Post newPost){
 
         postService.create(username, newPost);
         return ResponseEntity.ok().build();
