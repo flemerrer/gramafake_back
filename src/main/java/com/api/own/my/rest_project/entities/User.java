@@ -16,7 +16,7 @@ public class User {
     @Id
     private Long id;
 
-    private String pseudo;
+    private String username;
 
     private String password;
 
@@ -29,7 +29,7 @@ public class User {
     List<Comment> commentList;
 
     public User(String pseudo, String password, String profilepic) {
-        this.pseudo = pseudo;
+        this.username = pseudo;
         this.password = password;
         this.profilepic = profilepic;
     }

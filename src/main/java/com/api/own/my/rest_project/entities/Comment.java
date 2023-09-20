@@ -8,6 +8,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.LocalDate;
+
 @Entity
 @Getter @Setter @NoArgsConstructor
 public class Comment {
@@ -16,6 +18,8 @@ public class Comment {
     private Long id;
 
     private String description;
+
+    private LocalDate date;
 
     @ManyToOne
     private Post post;
@@ -27,5 +31,6 @@ public class Comment {
         this.description = description;
         this.post = post;
         this.user = user;
+        this.date = LocalDate.now();
     }
 }

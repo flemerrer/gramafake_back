@@ -8,6 +8,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Entity
@@ -21,6 +22,8 @@ public class Post {
 
     private String description;
 
+    private LocalDate date;
+
     @OneToOne
     User user;
 
@@ -31,5 +34,6 @@ public class Post {
         this.picture = picture;
         this.description = description;
         this.user = user;
+        this.date = LocalDate.now();
     }
 }
