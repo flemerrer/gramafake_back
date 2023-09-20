@@ -2,6 +2,7 @@ package com.api.own.my.rest_project.services;
 
 import com.api.own.my.rest_project.entities.Post;
 import com.api.own.my.rest_project.entities.dto.NewPost;
+import com.api.own.my.rest_project.entities.dto.PostSend;
 import com.api.own.my.rest_project.repositories.PostRepo;
 import com.api.own.my.rest_project.repositories.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,8 +32,8 @@ public class PostService {
         return postRepo.findById(id).get();
     }
 
-    public List<Post> getAll() {
-        return postRepo.findAll();
+    public List<PostSend> getAll() {
+        return postRepo.findAll().stream().map(post -> post.toDto()).toList();
     }
 
     public void update(Post post) {

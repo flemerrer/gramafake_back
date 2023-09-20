@@ -2,6 +2,7 @@ package com.api.own.my.rest_project.controllers;
 
 import com.api.own.my.rest_project.entities.Post;
 import com.api.own.my.rest_project.entities.dto.NewPost;
+import com.api.own.my.rest_project.entities.dto.PostSend;
 import com.api.own.my.rest_project.services.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -18,8 +19,9 @@ public class PostController {
     PostService postService;
 
     @GetMapping("/all")
-    public List<Post> fetchAll(){
+    public List<PostSend> fetchAll(){
         return postService.getAll();
+
     }
 
     @GetMapping("/{id}")

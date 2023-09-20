@@ -1,5 +1,6 @@
 package com.api.own.my.rest_project.entities;
 
+import com.api.own.my.rest_project.entities.dto.PostSend;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -32,5 +33,10 @@ public class Post {
         this.picture = picture;
         this.description = description;
         this.user = user;
+    }
+
+    public PostSend toDto() {
+        PostSend postDTO = new PostSend(this.user.getUsername(), this.getPicture(), this.getDescription(), this.getDate());
+        return postDTO;
     }
 }
