@@ -1,6 +1,7 @@
 package com.api.own.my.rest_project.services;
 
 import com.api.own.my.rest_project.entities.User;
+import com.api.own.my.rest_project.entities.dto.NewUser;
 import com.api.own.my.rest_project.repositories.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,8 +15,9 @@ public class UserService {
     @Autowired
     UserRepo userRepo;
 
-    public void create(User user) {
-        userRepo.save(user);
+    public void create(NewUser newUser) {
+        User createUser = new User(newUser.username(), newUser.password(), newUser.profilepic());
+        userRepo.save(createUser);
     }
 
     public User getOne(Long id) {

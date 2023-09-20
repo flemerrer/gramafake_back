@@ -7,6 +7,7 @@ import com.api.own.my.rest_project.repositories.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Service
@@ -26,6 +27,7 @@ public class CommentService {
         createComment.setDescription(newComment.getDescription());
         createComment.setUser(userRepo.findByUsername(username).get());
         createComment.setPost(postRepo.findById(postId).get());
+        createComment.setDate(LocalDate.now());
         commentRepo.save(createComment);
     }
 

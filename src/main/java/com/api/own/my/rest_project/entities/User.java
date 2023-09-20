@@ -27,8 +27,8 @@ public class User {
     @OneToMany
     List<Comment> commentList;
 
-    public User(String pseudo, String password, String profilepic) {
-        this.username = pseudo;
+    public User(String username, String password, String profilepic) {
+        this.username = username;
         this.password = password;
         this.profilepic = profilepic;
     }

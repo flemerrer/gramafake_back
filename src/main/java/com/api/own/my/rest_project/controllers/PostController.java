@@ -1,6 +1,7 @@
 package com.api.own.my.rest_project.controllers;
 
 import com.api.own.my.rest_project.entities.Post;
+import com.api.own.my.rest_project.entities.dto.NewPost;
 import com.api.own.my.rest_project.services.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -26,7 +27,7 @@ public class PostController {
     }
 
     @PostMapping("/create")
-    public ResponseEntity createPost(@RequestParam String username, @RequestBody Post newPost){
+    public ResponseEntity createPost(@RequestParam String username, @RequestBody NewPost newPost){
 
         postService.create(username, newPost);
         return ResponseEntity.ok().build();

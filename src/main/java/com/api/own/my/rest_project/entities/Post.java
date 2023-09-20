@@ -32,6 +32,5 @@ public class Post {
         this.picture = picture;
         this.description = description;
         this.user = user;
-        this.date = LocalDate.now();
     }
 }

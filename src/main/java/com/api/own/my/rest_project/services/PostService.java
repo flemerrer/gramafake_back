@@ -1,12 +1,13 @@
 package com.api.own.my.rest_project.services;
 
-import com.api.own.my.rest_project.entities.Comment;
 import com.api.own.my.rest_project.entities.Post;
+import com.api.own.my.rest_project.entities.dto.NewPost;
 import com.api.own.my.rest_project.repositories.PostRepo;
 import com.api.own.my.rest_project.repositories.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Service
@@ -17,11 +18,12 @@ public class PostService {
     @Autowired
     UserRepo userRepo;
 
-    public void create(String username, Post newPost) {
+    public void create(String username, NewPost newPost) {
         Post createPost = new Post();
-        createPost.setPicture(newPost.getPicture());
-        createPost.setDescription(newPost.getDescription());
+        createPost.setPicture(newPost.picture());
+        createPost.setDescription(newPost.description());
         createPost.setUser(userRepo.findByUsername(username).get());
+        createPost.setDate(LocalDate.now());
         postRepo.save(createPost);
     }
 

@@ -28,11 +28,10 @@ public class UserController {
     }
 
     @PostMapping("/create")
-    public ResponseEntity createUser(@RequestBody NewUser newUser){
+    public ResponseEntity create(@RequestBody NewUser newUser){
 
         if (userService.getUserByName(newUser.username()).isEmpty()){
-            User createUser = new User(newUser.username(), newUser.password(), newUser.profilepic());
-            userService.create(createUser);
+            userService.create(newUser);
             return ResponseEntity.ok().build();
         } else {
             return ResponseEntity.status(409).build();
