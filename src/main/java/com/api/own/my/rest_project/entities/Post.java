@@ -22,7 +22,7 @@ public class Post {
 
     private LocalDate date;
 
-    @OneToOne
+    @ManyToOne
     User user;
 
     @OneToMany
